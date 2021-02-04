@@ -26,7 +26,8 @@ module.exports = class BanCommand extends Command {
         })
     }
     run(message, { member, reason }) {
-       member.ban({
+      if (member.bannable)
+      { member.ban({
            reason: reason
        })
        .then(() => {
@@ -34,6 +35,6 @@ module.exports = class BanCommand extends Command {
        })
        .catch(err => {
            message.reply('uhhh i can\'t kick that person...')
-       })
+       })}
     }
 }
