@@ -24,7 +24,7 @@ module.exports = class KickCommand extends Command {
             ]
         })
     }
-    run(message, { member, message }) {
+    run(message, { member, reason }) {
        member.kick({
            reason: reason
        })
