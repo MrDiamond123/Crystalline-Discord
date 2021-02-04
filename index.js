@@ -1,15 +1,24 @@
-const Discord = require('discord.js')
-const client = new Discord.Client()
+const { CommandoClient } = require('discord.js-commando');
+const path = require('path');
 
-client.once('ready', () =>{
-    console.log("ready")
-})
+const client = new CommandoClient({
+	commandPrefix: '?',
+	owner: '125411691516133376',
+});
 
-client.on('message', (message) => {
-    if (message.content === '!ping') {
-        // send back "Pong." to the channel the message was sent in
-        message.channel.send('Pong.');
-    }
-})
+client.registry
+	.registerDefaultTypes()
+	.registerGroups([
+		['first', 'Your First Command Group'],
+	])
+	.registerDefaultGroups()
+	.registerDefaultCommands()
+	.registerCommandsIn(path.join(__dirname, 'commands'));
 
+client.once('ready', () => {
+	console.log(`Logged in as ${client.user.tag}! (${client.user.id})`);
+
+});
+
+client.on('error', console.error);
 client.login(process.env.TOKEN)
