@@ -1,4 +1,5 @@
-const { Command, MessageEmbed } = require('discord.js-commando')
+const { Command } = require('discord.js-commando')
+const { MessageEmbed } = require('discord.js')
 const fetch = require('node-fetch')
 const querystring = require('querystring')
 module.exports = class CommandUrban extends Command {
