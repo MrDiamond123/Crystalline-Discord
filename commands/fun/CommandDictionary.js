@@ -1,6 +1,6 @@
 const { Command } = require('discord.js-commando')
 const { MessageEmbed, Message } = require('discord.js')
-import { CollegiateDictionary, WordNotFoundError } from 'mw-dict'
+const { CollegiateDictionary, WordNotFoundError } = require('mw-dict') 
 
 
 module.exports = class CommandDictionary extends Command {
