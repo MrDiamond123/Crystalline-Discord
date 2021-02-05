@@ -10,6 +10,7 @@ client.registry
 	.registerDefaultTypes()
 	.registerGroups([
 		['moderation', 'Moderation Stuff'],
+		['fun', 'Fun Stuff']
 	])
 	.registerDefaultGroups()
 	.registerDefaultCommands()
