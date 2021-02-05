@@ -26,12 +26,15 @@ module.exports = class BanCommand extends Command {
         })
     }
     run(message, { member, reason }) {
+        const userTag = member.tag
       if (member.bannable)
-      { member.ban({
+      {
+          member.send(`You were banned from ${member.guild.name} for ${reason}`)
+    member.ban({
            reason: reason
        })
        .then(() => {
-           message.reply(`Successfully banned ${member.tag} for '${reason}'`)
+           message.reply(`Successfully banned ${userTag} for '${reason}'`)
        })
        .catch(err => {
            message.reply('uhhh i can\'t kick that person...')
