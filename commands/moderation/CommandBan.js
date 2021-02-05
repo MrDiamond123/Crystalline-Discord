@@ -37,7 +37,9 @@ module.exports = class BanCommand extends Command {
            message.reply(`Successfully banned ${userTag} for '${reason}'`)
        })
        .catch(err => {
-           message.reply('uhhh i can\'t kick that person...')
-       })}
+           message.reply('uhhh i can\'t ban that person...')
+       })} else {
+           message.reply('uhhh i can\'t ban that person...')
+       }
     }
 }
