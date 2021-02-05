@@ -23,9 +23,10 @@ module.exports = class CommandDictionary extends Command {
         const dict = new CollegiateDictionary(process.env.MW_KEY)
         const trim = (str, max) => ((str.length > max) ? `${str.slice(0, max - 3)}...` : str);
 
+        let embed;
         dict.lookup(word)
             .then(result => {
-                const embed = new MessageEmbed()
+                embed = new MessageEmbed()
                 .setColor('#EFFF00')
                 .setTitle(result.word)
                 .addFields(
@@ -34,7 +35,7 @@ module.exports = class CommandDictionary extends Command {
             })
             .catch(error => {
                 if (error instanceof WordNotFoundError) {
-                    const embed = new MessageEmbed()
+                    embed = new MessageEmbed()
                                       .setColor('#FFFF00')
                                       .setTitle('Unknown Word!')
                                       .setDescription(trim(`Try one of these words instead: ${error.suggestion}`, 1024))
