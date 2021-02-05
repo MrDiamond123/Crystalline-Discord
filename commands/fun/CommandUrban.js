@@ -17,7 +17,7 @@ module.exports = class CommandUrban extends Command {
             }]
         })
     }
-    run(message, { word }) {
+    async run(message, { word }) {
         const trim = (str, max) => ((str.length > max) ? `${str.slice(0, max - 3)}...` : str);
 
         const { list } = await fetch(`https://api.urbandictionary.com/v0/define?${word}`).then(response => response.json());
