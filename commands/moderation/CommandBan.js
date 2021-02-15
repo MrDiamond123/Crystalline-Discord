@@ -26,7 +26,7 @@ module.exports = class BanCommand extends Command {
         })
     }
     run(message, { member, reason }) {
-        const userTag = member.tag
+        const userTag = member.displayName
       if (member.bannable)
       {
           member.send(`You were banned from ${member.guild.name} for ${reason}`)

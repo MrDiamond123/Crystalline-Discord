@@ -25,7 +25,7 @@ module.exports = class KickCommand extends Command {
         })
     }
     run(message, { member, reason }) {
-        const userTag = member.tag
+       const userTag = member.displayName
        if (member.kickable) {
             member.send(`You were kicked from ${member.guild.name} for ${reason}`)
             member.kick({
