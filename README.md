@@ -1,17 +1,18 @@
 # Crystalline-Discord
 A modular general use Discord Bot 
 
-Moderation Stuff
-ban: Bans people
-kick: Kicks people
+## Moderation Stuff
 
-Fun Stuff
-urban: Looks up a word from the Urban Dictionary
+* ban: Bans people
+* kick: Kicks people
 
-MUSIC
-play: it play music
-queue: it say the music
-resume: it play music again
-shuffle: it shuffle music
-skip: it not play this music
-stop: it not play music
+## Fun Stuff
+* urban: Looks up a word from the Urban Dictionary
+
+## MUSIC
+* play: it play music
+* queue: it say the music
+* resume: it play music again
+* shuffle: it shuffle music
+* skip: it not play this music
+* stop: it not play music
