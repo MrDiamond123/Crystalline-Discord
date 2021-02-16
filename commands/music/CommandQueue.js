@@ -14,6 +14,10 @@ module.exports =
         }
         async run(message, {song}) {
            const tracks = await this.client.player.getQueue(message).tracks
-           message.reply(tracks)
+           let text = [];
+           for (const track in tracks) {
+                text.push(track.title)
+           }
+           message.reply(text)
         }
     }
