@@ -1,4 +1,5 @@
 const { Command } = require('discord.js-commando')
+const { Pagination } = require('discord-paginationembed')
 module.exports = 
     class QueueCommand extends Command {
         constructor(client) {
@@ -13,11 +14,20 @@ module.exports =
             })
         }
         async run(message, {song}) {
-           const tracks = await this.client.player.getQueue(message).tracks
-           let text = [];
-           for (const track in tracks) {
-                text.push(track.title)
-           }
-           message.reply(text)
+           const queue = await this.client.player.getQueue(message)
+           const FieldsEmbed = new Pagination.FieldsEmbed();
+   
+           FieldsEmbed.embed
+               .setColor(data.config.embed.color)
+               .addField(`Currently Playing: `, `[${queue.tracks[0].title}](${queue.tracks[0].url})\n*Requested by ${queue.tracks[0].requestedBy}*\n`);
+           
+           FieldsEmbed.setArray(queue.tracks[1] ? queue.tracks.slice(1, queue.tracks.length) : [])
+               .setAuthorizedUsers([message.author.id])
+               .setChannel(message.channel)
+               .setElementsPerPage(5)
+               .setPageIndicator(true)
+               .formatField("Queue", (track) => `${++i}. [${track.title}](${track.url})\n*Requested by ${track.requestedBy}*\n`);
+    
+           FieldsEmbed.build();
         }
     }
