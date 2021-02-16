@@ -19,7 +19,7 @@ module.exports =
                 ]
             })
         }
-        async run(play) {
+        async run(play, {song}) {
             this.client.player.play(message, song, true)
         }
     }
