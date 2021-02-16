@@ -15,7 +15,7 @@ module.exports =
                         key: 'song',
                         prompt: 'What song would you like to play?',
                         type: 'string',
-default: 'Never gonna give you up'
+                        default: 'Never gonna give you up'
                     }
                 ]
             })
