@@ -1,5 +1,5 @@
 const { Command } = require('discord.js-commando')
-module.exports = [
+module.exports = 
     class PlayCommand extends Command {
         constructor(client) {
             super (client, {
@@ -22,5 +22,3 @@ module.exports = [
             this.client.player.play(message, song, true)
         }
     }
-
-]
