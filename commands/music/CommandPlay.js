@@ -20,7 +20,7 @@ default: 'Never gonna give you up'
                 ]
             })
         }
-        async run(play, {song}) {
+        async run(message, {song}) {
            await this.client.player.play(message, song, true)
         }
     }
