@@ -4,6 +4,7 @@ module.exports =
         constructor(client) {
             super (client, {
                 name: 'play',
+                memberName: 'play',
                 aliases: ['themusicgoboomboom'],
                 group: 'music',
                 description: 'it play music',
