@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/MrDiamond123/Crystalline-Discord#readme",
   "dependencies": {
+    "@discordjs/opus": "^0.4.0",
+    "discord-player": "^3.2.1",
     "discord.js": "^12.5.1",
     "discord.js-commando": "^0.12.0",
     "node-fetch": "^2.6.1",
