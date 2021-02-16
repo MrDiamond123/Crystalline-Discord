@@ -13,6 +13,7 @@ module.exports =
             })
         }
         async run(message, {song}) {
-           await this.client.player.getQueue(message)
+           const tracks = await this.client.player.getQueue(message).tracks
+           message.reply(tracks)
         }
     }
